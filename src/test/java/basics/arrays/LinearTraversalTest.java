@@ -145,4 +145,11 @@ class LinearTraversalTest {
         int [] expected = {0,0,5,0};
         assertArrayEquals(expected,actual);
     }
+
+    @Test
+    void reverseAllEven() {
+        int arr[] = {1,4,3,2,8,5,6};
+        int [] actual = lt.reverseAllEven(arr);
+        int [] expected = {1,8,3,6,5,4,2,1};
+    }
 }

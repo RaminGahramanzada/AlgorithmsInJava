@@ -213,7 +213,7 @@ public class LinearTraversal {
         }
         return true;
     }
-
+    //16 Replace elements less than value with zero
     public int [] NegativeElementReplaceToZero(int arr[]){
 
         int [] newArr= new int [arr.length];
@@ -228,6 +228,39 @@ public class LinearTraversal {
         }
 
         return newArr;
+    }
+
+    //17.Reverse all even numbers
+    public int [] reverseAllEven(int arr[]){
+        int evenCount=0;
+
+        for(int element : arr){
+            if(element%2==0){
+               evenCount++;
+            }
+        }
+
+        int [] evenNumbers = new int[evenCount];
+        int index=0;
+
+        for(int element : arr){
+            if(element%2==0){
+                evenNumbers[index++] = element;
+            }
+        }
+
+        for(int i=0;i<evenCount/2;i++){
+            int temp = evenNumbers[i];
+           evenNumbers[i] = evenNumbers[evenCount-i-1];
+           evenNumbers[evenCount-i-1] = temp;
+        }
+        index =0;
+        for(int i=0;i<arr.length;i++){
+            if(arr[i]%2 ==0){
+                arr[i] = evenNumbers[index++];
+            }
+        }
+        return arr;
     }
 
 
