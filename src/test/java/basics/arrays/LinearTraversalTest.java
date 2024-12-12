@@ -1,12 +1,11 @@
 package basics.arrays;
 
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
 
+import org.junit.jupiter.api.Test;
 import java.util.HashMap;
 import java.util.Map;
-
 import static org.junit.jupiter.api.Assertions.*;
+
 class LinearTraversalTest {
     LinearTraversal lt = new LinearTraversal();
 
@@ -113,5 +112,37 @@ class LinearTraversalTest {
         expected.put(6,1);
         assertEquals(expected,lt.frequencyForEachElement(actual));
 
+    }
+
+    @Test
+    void averageOfElements() {
+        int [] arr ={2,4,6,8};
+        double actual = lt.averageOfElements(arr);
+        double expected = 5.0;
+        assertEquals(expected,actual);
+    }
+
+    @Test
+    void secondLargestElement() {
+        int [] arr = {3,4,5,2,6};
+        int actual = lt.secondLargestElement(arr);
+        int expected =5;
+        assertEquals(expected,actual);
+    }
+
+    @Test
+    void isArrayAscendingOrdered() {
+        int arr[] ={1,2,4,5,6,7};
+        boolean actual = lt.isArrayAscendingOrdered(arr);
+        boolean expected =true;
+        assertEquals(expected,actual);
+    }
+
+    @Test
+    void negativeElementReplaceToZero() {
+        int arr[] = {-2,-1,5,-7};
+        int [] actual =lt.NegativeElementReplaceToZero(arr);
+        int [] expected = {0,0,5,0};
+        assertArrayEquals(expected,actual);
     }
 }

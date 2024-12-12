@@ -159,6 +159,7 @@ public class LinearTraversal {
     }
 
 
+    //12.Count occurrences of each element
     public Map<Integer,Integer> frequencyForEachElement(int arr[]){
 
         Map<Integer,Integer> list = new HashMap<>();
@@ -167,6 +168,66 @@ public class LinearTraversal {
         }
         return list;
 
+    }
+
+    //13.Calculate average of all elements
+    public double averageOfElements(int arr[]){
+        int sum =0;
+        double average =0;
+
+        for(int element :arr){
+            sum+=element;
+        }
+        average = (double) sum /arr.length;
+
+        return average;
+    }
+
+    //14.Find the second largest element
+    public int secondLargestElement(int [] arr){
+        int max =arr[0];
+        int secMax =0;
+
+       for(int i=0;i<arr.length;i++) {
+           if (arr[i] > max) {
+               secMax = max;
+               max = arr[i];
+           }
+       }
+
+        return secMax;
+    }
+
+    //15.Check if array is sorted in ascending order
+    public boolean isArrayAscendingOrdered (int arr[]){
+        int j =0;
+        int temp = arr[0];
+
+        for(int i=1;i<arr.length;i++){
+            if(temp<arr[i]){
+                j++;
+                temp = arr[j];
+            }else{
+                return false;
+            }
+        }
+        return true;
+    }
+
+    public int [] NegativeElementReplaceToZero(int arr[]){
+
+        int [] newArr= new int [arr.length];
+
+        for(int i=0;i<arr.length;i++){
+            if(arr[i]<0){
+                newArr[i]=0;
+            }else{
+                newArr[i]=arr[i];
+            }
+
+        }
+
+        return newArr;
     }
 
 
