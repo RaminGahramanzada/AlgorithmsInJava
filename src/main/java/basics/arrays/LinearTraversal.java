@@ -67,7 +67,7 @@ public class LinearTraversal {
         return count;
     }
 
-    //6.6	Determine how many times a specific element appears
+    //6.Determine how many times a specific element appears
     public int countFrequencyTargetNum(int target,int arr[]){
         int count =0;
 
@@ -214,7 +214,7 @@ public class LinearTraversal {
         return true;
     }
     //16 Replace elements less than value with zero
-    public int [] NegativeElementReplaceToZero(int arr[]){
+    public int [] negativeElementReplaceToZero(int arr[]){
 
         int [] newArr= new int [arr.length];
 
@@ -263,11 +263,111 @@ public class LinearTraversal {
         return arr;
     }
 
+    //18.Find first repeating element
+    public int findFirstRepeating(int [] arr){
+        for (int i = 0; i < arr.length; i++) {
+            for (int j = i+1; j <arr.length ; j++) {
+                if(arr[i]==arr[j]){
+                    return arr[i];
+                }
+            }
+        }
+        return -1;
+    }
 
+    //19.Calculate cumulative sum of elements
+    public int [] cumulativeSumOfElements(int arr[]){
+        int [] newArr = new int [arr.length];
+        int temp=0;//3
 
+        for(int i =0;i<arr.length;i++){
+           temp+=arr[i];
+           newArr[i]=temp;
+        }
+        return newArr;
+    }
 
+    //20.Replace with sum of previous elements
+    public int [] replaceWithSumOfPreviousElement(int arr[]){
+        int newArr [] = new int[arr.length];
+        newArr[0] = 0;
+        int temp = 0;
+        for (int i = 1; i <arr.length ; i++) {
+            temp+=arr[i];
+            newArr[i] =temp;
+        }
 
+        return newArr;
+    }
 
+    //21.Check if all elements are unique
+    public boolean isAllElementsUnique(int arr[]){
+
+        for(int i=0;i<arr.length;i++){
+            for(int j=i+1;j<arr.length;j++){
+                if(arr[i]==arr[j]){
+                    return false;
+                }
+            }
+        }
+
+        return true;
+    }
+
+    //22.Count prime numbers in array
+    public int countPrimeNumInArray(int [] arr){
+       int count=0;
+
+      for(int element :arr){
+          if(element>1){
+              boolean isPrime =true;
+              for (int i = 2; i <=Math.sqrt(element) ; i++) {
+                  if(element%i==0){
+                      isPrime =false;
+                      break;
+                  }
+              }
+              if(isPrime){
+                  count++;
+              }
+          }
+      }
+       return count;
+    }
+
+    //23.Find index of first negative number
+    public int findFirstIndexNegativeNum(int arr[]){
+        int index=0;
+        for (int i = 0; i < arr.length; i++) {
+            if(arr[i]<0){
+                index=i+1;//array index start 0 but I change to 1
+                break;
+            }
+        }
+        return index;
+    }
+
+    //24.Replace elements greater than value
+    public int [] replaceNumGreaterThan(int target,int arr[]){
+        for (int i = 0; i <arr.length ; i++) {
+            if(arr[i]>target){
+                arr[i]=10;
+            }
+        }
+        return arr;
+    }
+
+    public boolean isDuplicatedNum(int arr[]){
+        for(int i=0;i<arr.length;i++){
+            for(int j=i+1;j<arr.length;j++){
+                if(arr[i]==arr[j]){
+                    return true;
+                }
+            }
+        }
+        return false;
+
+    }
 
 
 

@@ -141,7 +141,7 @@ class LinearTraversalTest {
     @Test
     void negativeElementReplaceToZero() {
         int arr[] = {-2,-1,5,-7};
-        int [] actual =lt.NegativeElementReplaceToZero(arr);
+        int [] actual =lt.negativeElementReplaceToZero(arr);
         int [] expected = {0,0,5,0};
         assertArrayEquals(expected,actual);
     }
@@ -151,5 +151,72 @@ class LinearTraversalTest {
         int arr[] = {1,4,3,2,8,5,6};
         int [] actual = lt.reverseAllEven(arr);
         int [] expected = {1,8,3,6,5,4,2,1};
+    }
+
+    @Test
+    void findFirstRepeating() {
+        int [] arr = {1,2,3,2,4,5,3};
+        int actual = lt.findFirstRepeating(arr);
+        int expected = 2;
+        assertEquals(expected,actual);
+    }
+
+
+    @Test
+    void cumulativeSumOfElements() {
+        int [] arr = {1,2,3,4};
+        int [] actual = lt.cumulativeSumOfElements(arr);
+        int [] expected = {1,3,6,10};
+        assertArrayEquals(expected,actual);
+    }
+
+    @Test
+    void replaceWithSumOfPreviousElement() {
+        int [] arr = {5,8,12,20};
+        int [] actual = lt.replaceWithSumOfPreviousElement(arr);
+        int [] expected = {0,5,13,25};
+    }
+
+    @Test
+    void isAllElementsUnique() {
+        int [] arr = {1,2,3,9,5};
+        boolean actual = lt.isAllElementsUnique(arr);
+        boolean expected =true;
+        assertEquals(expected,actual);
+
+    }
+
+    @Test
+    void countPrimeNumInArray() {
+        int arr[] = {5,8,9,10,3};
+        int actual = lt.countPrimeNumInArray(arr);
+        int expected = 2;
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    void findFirstIndexNegativeNum() {
+        int [] arr = {1,-2,3,-5,6};
+        int actual = lt.findFirstIndexNegativeNum(arr);
+        int expected = 2;
+        assertEquals(expected,actual);
+    }
+
+    @Test
+    void replaceNumGreaterThan() {
+        int arr[] ={1,9,4,2,7};
+        int target =5;
+        int [] actual = lt.replaceNumGreaterThan(target,arr);
+        int [] expected = {1,10,4,2,10};
+        assertArrayEquals(expected,actual);
+
+    }
+
+    @Test
+    void isDuplicatedNum() {
+        int arr [] ={1,2,3,5,3};
+        boolean actual = lt.isDuplicatedNum(arr);
+        boolean expected =true;
+        assertEquals(expected,actual);
     }
 }
