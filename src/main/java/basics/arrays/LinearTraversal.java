@@ -1,6 +1,5 @@
 package basics.arrays;
 
-import javax.swing.*;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -357,6 +356,7 @@ public class LinearTraversal {
         return arr;
     }
 
+    //25.Check for duplicate elements
     public boolean isDuplicatedNum(int arr[]){
         for(int i=0;i<arr.length;i++){
             for(int j=i+1;j<arr.length;j++){
