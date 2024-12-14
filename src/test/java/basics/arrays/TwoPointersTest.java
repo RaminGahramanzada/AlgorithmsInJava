@@ -2,6 +2,8 @@ package basics.arrays;
 
 import org.junit.jupiter.api.Test;
 
+import java.util.Arrays;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class TwoPointersTest {
@@ -58,5 +60,32 @@ class TwoPointersTest {
         int[] actual = tp.removeSpecificElement(arr,target);
         int [] expected = {1,2,4,5,6};
         assertArrayEquals(expected,actual);
+    }
+
+    @Test
+    void findLongestSubArray() {
+        int [] arr = {1,2,3,4,5,2,5,8,7,6,9,2,7,3};
+        int [] actual =tp.findLongestSubArray(arr);
+        int [] expected = {2,5,8,7,6,9};
+        assertArrayEquals(expected,actual);
+    }
+
+    @Test
+    void findPairsSpecificDifference() {
+        int k= 5;
+        int arr [] ={1,2,3,4,6,-1};
+        int actual = tp.findPairsSpecificDifference(arr,k);
+        int expected = 3;
+        assertEquals(expected,actual);
+    }
+
+    @Test
+    void minimumDistanceBetweenElements() {
+        int x =3;
+        int y = 5;
+        int [] arr ={1,2,3,4,5,6,7,3,9,10,5};
+        int actual = tp.minimumDistanceBetweenElements(arr,x,y);
+        int expected = 2;
+        assertEquals(actual,expected);
     }
 }

@@ -1,5 +1,7 @@
 package basics.arrays;
 
+import java.util.Arrays;
+
 public class TwoPointers {
 
     //1.Check if an array is a palindrome
@@ -110,6 +112,58 @@ public class TwoPointers {
 
     }
 
+    //7.Find longest subarray with unique elements
+    public int [] findLongestSubArray(int arr[]){
+        int maxLength=0;
+        int start =0;
+        int startIndex =0;
+
+        int [] lastSeen = new int[100];
+        for (int i = 0; i <lastSeen.length ; i++) {
+            lastSeen[i] = -1;
+        }
+        for(int end=0;end<arr.length;end++){
+            if(lastSeen[arr[end]] >= start){
+                start = lastSeen[arr[end]]+1;
+            }
+            lastSeen[arr[end]]=end;
+
+            if(end-start+1>maxLength){
+                maxLength=end-start+1;
+                startIndex=start;
+            }
+        }
+        return Arrays.copyOfRange(arr,startIndex,startIndex+maxLength);
+    }
+
+    //8.Count pairs with specific difference
+    public int findPairsSpecificDifference(int arr[],int k){
+        int left =0;
+        int count =0;
+        int right =arr.length-1;
+
+        while(left<right){
+            for (int i = left; i <arr.length ; i++) {
+                if(arr[left]+arr[i]==k){
+                    count++;
+                }
+            }
+            left++;
+        }
+        return count;
+    }
+
+    //can't find solution yet
+    public int minimumDistanceBetweenElements(int arr[],int x,int y){
+        int minimumDistance =arr.length;
+        int left = 0;
+        int right =arr.length-1;
+
+        while(left<right){
+
+        }
+        return minimumDistance;
+    }
 
 
 }
