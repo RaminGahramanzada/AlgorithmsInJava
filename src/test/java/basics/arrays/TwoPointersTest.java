@@ -88,4 +88,14 @@ class TwoPointersTest {
         int expected = 2;
         assertEquals(actual,expected);
     }
+
+    @Test
+    void evenAndOddPartition() {
+        int arr [] = {1,2,3,4,5,6,7};
+        int [] expectedOdd ={1,3,5,7};
+        int [] expectedEven = {2,4,6};
+        int [][] actual = tp.evenAndOddPartition(arr);
+        assertArrayEquals(expectedOdd,actual[0]);
+        assertArrayEquals(expectedEven,actual[1]);
+    }
 }

@@ -153,16 +153,63 @@ public class TwoPointers {
         return count;
     }
 
-    //can't find solution yet
+    //9.Find minimum distance between elements
     public int minimumDistanceBetweenElements(int arr[],int x,int y){
         int minimumDistance =arr.length;
-        int left = 0;
-        int right =arr.length-1;
+        int lastIndexOfX = -1;
+        int lastIndexOfY =-1;
 
-        while(left<right){
+        for (int i = 0; i < arr.length; i++) {
+            if(arr[i]==x){
+                lastIndexOfX =i;
+                if(lastIndexOfY !=-1){
+                    minimumDistance = Math.min(minimumDistance,Math.abs(lastIndexOfX-lastIndexOfY));
+                }
+            }
 
+            if(arr[i]==y){
+                lastIndexOfY=i;
+                if(lastIndexOfX!=-1){
+                    minimumDistance =Math.min(minimumDistance,Math.abs(lastIndexOfX-lastIndexOfY));
+                }
+            }
         }
+
         return minimumDistance;
+    }
+
+    public int [][] evenAndOddPartition(int arr[]){
+
+        int left =0;
+        int right = arr.length-1;
+        int oddCounter =0;
+        int evenCounter =0;
+
+        for (int j : arr) {
+            if (j % 2 != 0) {
+                oddCounter++;
+            } else {
+                evenCounter++;
+            }
+        }
+         int [] oddArr =new int [oddCounter];
+         int [] evenArr = new int [evenCounter];
+
+         int countrEven =0;
+         int countrOdd =0;
+
+         while(left<=right){
+           if(arr[left]%2!=0){
+               oddArr[countrOdd] =arr[left];
+               countrOdd++;
+           }else{
+               evenArr[countrEven]= arr[left];
+               countrEven++;
+           }
+           left++;
+         }
+
+        return  new int[][] {oddArr, evenArr};
     }
 
 
