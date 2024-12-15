@@ -178,6 +178,7 @@ public class TwoPointers {
         return minimumDistance;
     }
 
+    //10.Partition even and odd numbers
     public int [][] evenAndOddPartition(int arr[]){
 
         int left =0;
@@ -212,5 +213,26 @@ public class TwoPointers {
         return  new int[][] {oddArr, evenArr};
     }
 
+    //11.Arrange negative before positive numbers
+    public int [] negativeBeforePositive(int [] arr) {
+        int left = 0;
+        int right = arr.length - 1;
 
+        while (left <= right) {
+
+            if (arr[left] < 0) {
+                left++;
+            }
+
+            else if (arr[right] >= 0) {
+                right--;
+            }
+            else {
+                int temp = arr[left];
+                arr[left] = arr[right];
+                arr[right] = temp;
+            }
+        }
+        return arr;
+    }
 }

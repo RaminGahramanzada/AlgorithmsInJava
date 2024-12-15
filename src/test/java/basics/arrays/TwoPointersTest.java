@@ -98,4 +98,12 @@ class TwoPointersTest {
         assertArrayEquals(expectedOdd,actual[0]);
         assertArrayEquals(expectedEven,actual[1]);
     }
+
+    @Test
+    void negativeBeforePositive() {
+        int [] arr = {-1,7,5,10,-2};
+        int [] actual = tp.negativeBeforePositive(arr);
+        int [] expected = {-1,-2,5,10,7};
+        assertArrayEquals(expected,actual);
+    }
 }
