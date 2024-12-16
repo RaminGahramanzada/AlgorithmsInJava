@@ -235,4 +235,17 @@ public class TwoPointers {
         }
         return arr;
     }
+
+    //can't solve yet
+    public int [] rotateKLeft(int [] arr, int k){
+        //10 20 30 40 50 /k=3 = 40 50 10 20 30
+
+        int left =0;
+        int right =arr.length-1;
+
+
+
+
+        return null;
+    }
 }
